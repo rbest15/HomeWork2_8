@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F2C90E62450A832004509E0 /* SegueSwizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2C90E52450A832004509E0 /* SegueSwizzler.swift */; };
 		6F394D00244869100087672C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F394CFF244869100087672C /* AppDelegate.swift */; };
 		6F394D02244869100087672C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F394D01244869100087672C /* SceneDelegate.swift */; };
 		6F394D04244869100087672C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F394D03244869100087672C /* ViewController.swift */; };
 		6F394D07244869100087672C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F394D05244869100087672C /* Main.storyboard */; };
 		6F394D09244869120087672C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F394D08244869120087672C /* Assets.xcassets */; };
 		6F394D0C244869120087672C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F394D0A244869120087672C /* LaunchScreen.storyboard */; };
-		6F3AB01F245058E700B4D9A2 /* Swizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3AB01E245058E700B4D9A2 /* Swizzler.swift */; };
 		6F3AB0212450603400B4D9A2 /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3AB0202450603400B4D9A2 /* RedViewController.swift */; };
 		6F3AB0232450603E00B4D9A2 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3AB0222450603E00B4D9A2 /* GreenViewController.swift */; };
 		6F50587724503F38001683E8 /* Obj1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F50587624503F38001683E8 /* Obj1ViewController.m */; };
@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F2C90E52450A832004509E0 /* SegueSwizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueSwizzler.swift; path = ../../../../../Downloads/SegueSwizzler.swift; sourceTree = "<group>"; };
 		6F394CFC244869100087672C /* HomeWork2_8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork2_8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F394CFF244869100087672C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F394D01244869100087672C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		6F394D08244869120087672C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F394D0B244869120087672C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F394D0D244869120087672C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6F3AB01E245058E700B4D9A2 /* Swizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Swizzler.swift; path = ../../../../../Downloads/Swizzler.swift; sourceTree = "<group>"; };
 		6F3AB0202450603400B4D9A2 /* RedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = "<group>"; };
 		6F3AB0222450603E00B4D9A2 /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
 		6F50587424503F38001683E8 /* HomeWork2_8-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeWork2_8-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 				6F50587424503F38001683E8 /* HomeWork2_8-Bridging-Header.h */,
 				6F3AB0202450603400B4D9A2 /* RedViewController.swift */,
 				6F3AB0222450603E00B4D9A2 /* GreenViewController.swift */,
-				6F3AB01E245058E700B4D9A2 /* Swizzler.swift */,
+				6F2C90E52450A832004509E0 /* SegueSwizzler.swift */,
 			);
 			path = HomeWork2_8;
 			sourceTree = "<group>";
@@ -164,13 +164,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F3AB0232450603E00B4D9A2 /* GreenViewController.swift in Sources */,
+				6F2C90E62450A832004509E0 /* SegueSwizzler.swift in Sources */,
 				6F394D04244869100087672C /* ViewController.swift in Sources */,
 				6F50587A245049A1001683E8 /* Obj2ViewController.m in Sources */,
 				6F394D00244869100087672C /* AppDelegate.swift in Sources */,
 				6F50587C24504EF3001683E8 /* HM3ViewController.swift in Sources */,
 				6F3AB0212450603400B4D9A2 /* RedViewController.swift in Sources */,
 				6F394D02244869100087672C /* SceneDelegate.swift in Sources */,
-				6F3AB01F245058E700B4D9A2 /* Swizzler.swift in Sources */,
 				6F50587724503F38001683E8 /* Obj1ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
