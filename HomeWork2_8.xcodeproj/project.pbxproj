@@ -13,6 +13,12 @@
 		6F394D07244869100087672C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F394D05244869100087672C /* Main.storyboard */; };
 		6F394D09244869120087672C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F394D08244869120087672C /* Assets.xcassets */; };
 		6F394D0C244869120087672C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F394D0A244869120087672C /* LaunchScreen.storyboard */; };
+		6F3AB01F245058E700B4D9A2 /* Swizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3AB01E245058E700B4D9A2 /* Swizzler.swift */; };
+		6F3AB0212450603400B4D9A2 /* RedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3AB0202450603400B4D9A2 /* RedViewController.swift */; };
+		6F3AB0232450603E00B4D9A2 /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3AB0222450603E00B4D9A2 /* GreenViewController.swift */; };
+		6F50587724503F38001683E8 /* Obj1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F50587624503F38001683E8 /* Obj1ViewController.m */; };
+		6F50587A245049A1001683E8 /* Obj2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F505879245049A1001683E8 /* Obj2ViewController.m */; };
+		6F50587C24504EF3001683E8 /* HM3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F50587B24504EF3001683E8 /* HM3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,15 @@
 		6F394D08244869120087672C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F394D0B244869120087672C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F394D0D244869120087672C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F3AB01E245058E700B4D9A2 /* Swizzler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Swizzler.swift; path = ../../../../../Downloads/Swizzler.swift; sourceTree = "<group>"; };
+		6F3AB0202450603400B4D9A2 /* RedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedViewController.swift; sourceTree = "<group>"; };
+		6F3AB0222450603E00B4D9A2 /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
+		6F50587424503F38001683E8 /* HomeWork2_8-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HomeWork2_8-Bridging-Header.h"; sourceTree = "<group>"; };
+		6F50587524503F38001683E8 /* Obj1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Obj1ViewController.h; sourceTree = "<group>"; };
+		6F50587624503F38001683E8 /* Obj1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Obj1ViewController.m; sourceTree = "<group>"; };
+		6F505878245049A1001683E8 /* Obj2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Obj2ViewController.h; sourceTree = "<group>"; };
+		6F505879245049A1001683E8 /* Obj2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Obj2ViewController.m; sourceTree = "<group>"; };
+		6F50587B24504EF3001683E8 /* HM3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HM3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +75,18 @@
 				6F394D01244869100087672C /* SceneDelegate.swift */,
 				6F394D03244869100087672C /* ViewController.swift */,
 				6F394D05244869100087672C /* Main.storyboard */,
+				6F50587524503F38001683E8 /* Obj1ViewController.h */,
+				6F50587624503F38001683E8 /* Obj1ViewController.m */,
+				6F505878245049A1001683E8 /* Obj2ViewController.h */,
+				6F505879245049A1001683E8 /* Obj2ViewController.m */,
+				6F50587B24504EF3001683E8 /* HM3ViewController.swift */,
 				6F394D08244869120087672C /* Assets.xcassets */,
 				6F394D0A244869120087672C /* LaunchScreen.storyboard */,
 				6F394D0D244869120087672C /* Info.plist */,
+				6F50587424503F38001683E8 /* HomeWork2_8-Bridging-Header.h */,
+				6F3AB0202450603400B4D9A2 /* RedViewController.swift */,
+				6F3AB0222450603E00B4D9A2 /* GreenViewController.swift */,
+				6F3AB01E245058E700B4D9A2 /* Swizzler.swift */,
 			);
 			path = HomeWork2_8;
 			sourceTree = "<group>";
@@ -99,6 +123,7 @@
 				TargetAttributes = {
 					6F394CFB244869100087672C = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -138,9 +163,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F3AB0232450603E00B4D9A2 /* GreenViewController.swift in Sources */,
 				6F394D04244869100087672C /* ViewController.swift in Sources */,
+				6F50587A245049A1001683E8 /* Obj2ViewController.m in Sources */,
 				6F394D00244869100087672C /* AppDelegate.swift in Sources */,
+				6F50587C24504EF3001683E8 /* HM3ViewController.swift in Sources */,
+				6F3AB0212450603400B4D9A2 /* RedViewController.swift in Sources */,
 				6F394D02244869100087672C /* SceneDelegate.swift in Sources */,
+				6F3AB01F245058E700B4D9A2 /* Swizzler.swift in Sources */,
+				6F50587724503F38001683E8 /* Obj1ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3J9DR9455;
 				INFOPLIST_FILE = HomeWork2_8/Info.plist;
@@ -293,6 +325,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Skillbox.HomeWork2-8";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeWork2_8/HomeWork2_8-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y3J9DR9455;
 				INFOPLIST_FILE = HomeWork2_8/Info.plist;
@@ -311,6 +346,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Skillbox.HomeWork2-8";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HomeWork2_8/HomeWork2_8-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
