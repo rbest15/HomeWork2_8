@@ -1,32 +1,35 @@
 import UIKit
 
 class HM3ViewController: UIViewController{
-
+    
+    let picker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
+    @IBAction func selectButtonPressed(_ sender: Any) {
+        picker.allowsEditing = true
+        self.present(picker, animated: true)
+    }
+    
     @IBAction func toRed(_ sender: UIBarButtonItem) {
         performSegueWithIdentifier(identifier: "toRed", sender: nil) { (segue) in
             if let vc = segue.destination as? RedViewController {
-                vc.redLabel.text = self.textField.text ?? ""
+                vc.redText = self.textField.text ?? ""
             }
         }
     }
     @IBAction func toGreen(_ sender: UIBarButtonItem) {
         performSegueWithIdentifier(identifier: "toGreen", sender: nil) { (segue) in
             if let vc = segue.destination as? GreenViewController {
-                vc.greenLabel.text = self.textField.text ?? ""
+                vc.greenText = self.textField.text ?? ""
             }
         }
     }
-    @IBAction func setImagePressed(_ sender: Any) {
-        let pickerView = UIImagePickerController()
-        pickerView.delegate = self
-        pickerView.allowsEditing = true
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        picker.delegate = self
     }
+
 }
 private var AssociatedObjectHandle : UInt8 = 0
 extension UIView {
@@ -40,6 +43,10 @@ extension UIView {
     }
 }
 
-extension HM3ViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    
+extension HM3ViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.editedImage] as? UIImage else{ return }
+        imageView.image = image
+        dismiss(animated: true, completion: nil)
+    }
 }

@@ -1,11 +1,3 @@
-//
-//  SegueSwizzler.swift
-//  Viper7
-//
-//  Created by Nikita Arkhipov on 26.10.16.
-//  Copyright © 2016 Anvics. All rights reserved.
-//
-
 import UIKit
 
 class Box {
@@ -18,40 +10,40 @@ class Box {
 extension UIViewController {
     struct AssociatedKey {
         static var ClosurePrepareForSegueKey = "ClosurePrepareForSegueKey"
-        static var token: dispatch_once_t = 0
     }
     
     typealias ConfiguratePerformSegue = (UIStoryboardSegue) -> ()
+    
     func performSegueWithIdentifier(identifier: String, sender: AnyObject?, configurate: ConfiguratePerformSegue?) {
-        swizzlingPrepareForSegue()
+        UIViewController.swizzled
         configuratePerformSegue = configurate
-        performSegueWithIdentifier(identifier, sender: sender)
+        performSegue(withIdentifier: identifier, sender: sender)
     }
-    
-    private func swizzlingPrepareForSegue() {
-        dispatch_once(&AssociatedKey.token) {
-            let originalSelector = #selector(UIViewController.prepareForSegue(_:sender:))
-            let swizzledSelector = #selector(UIViewController.closurePrepareForSegue(_:sender:))
-            
-            let instanceClass = UIViewController.self
-            let originalMethod = class_getInstanceMethod(instanceClass, originalSelector)
-            let swizzledMethod = class_getInstanceMethod(instanceClass, swizzledSelector)
-            
-            let didAddMethod = class_addMethod(instanceClass, originalSelector,
-                                               method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
-            
-            if didAddMethod {
-                class_replaceMethod(instanceClass, swizzledSelector,
-                                    method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod))
-            } else {
-                method_exchangeImplementations(originalMethod, swizzledMethod)
-            }
+
+    static let swizzled : Bool = {
+        let originalSelector = #selector(UIViewController.prepare)
+        let swizzledSelector = #selector(UIViewController.closurePrepareForSegue(segue:sender:))
+        
+        let instanceClass = UIViewController.self
+        let originalMethod = class_getInstanceMethod(instanceClass, originalSelector)!
+        let swizzledMethod = class_getInstanceMethod(instanceClass, swizzledSelector)!
+        
+        let didAddMethod = class_addMethod(instanceClass, originalSelector,
+                                           method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
+        
+        if didAddMethod {
+            class_replaceMethod(instanceClass, swizzledSelector,
+                                method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod))
+        } else {
+            method_exchangeImplementations(originalMethod, swizzledMethod)
         }
-    }
+        return true
+    }()
+
     
-    func closurePrepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    @objc func closurePrepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         configuratePerformSegue?(segue)
-        closurePrepareForSegue(segue, sender: sender)
+        closurePrepareForSegue(segue: segue, sender: sender)
         configuratePerformSegue = nil
     }
     
@@ -62,6 +54,50 @@ extension UIViewController {
         }
         set {
             objc_setAssociatedObject(self, &AssociatedKey.ClosurePrepareForSegueKey, Box(newValue), objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+}
+
+extension UIImagePickerController{
+
+    typealias PickerControllerHandler = ([UIImagePickerController.InfoKey : Any]) -> ()
+    
+    func swizzle() {
+        let originalSelector = #selector(UIImagePickerControllerDelegate.imagePickerController(_:didFinishPickingMediaWithInfo:))
+        let swizzledSelector = #selector(closureDidFinishPickingMediaWithInfo)
+        
+        let instanceClass = UIImagePickerController.self
+        let originalMethod = class_getInstanceMethod(instanceClass, originalSelector)!
+        let swizzledMethod = class_getInstanceMethod(instanceClass, swizzledSelector)!
+        
+        let didAddMethod = class_addMethod(instanceClass, originalSelector,
+                                           method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
+        
+        if didAddMethod {
+            class_replaceMethod(instanceClass, swizzledSelector,
+                                method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod))
+        } else {
+            method_exchangeImplementations(originalMethod, swizzledMethod)
+        }
+    }
+    
+    @objc func closureDidFinishPickingMediaWithInfo(){
+        
+    }
+    
+    func imageFromPickerController() {
+        
+    }
+    
+    var configureForPickerController: PickerControllerHandler? {
+        get {
+            var ClosurePickerViewKey = "ClosurePickerViewKey"
+            let box = objc_getAssociatedObject(self, &ClosurePickerViewKey) as? Box
+            return box?.value as? PickerControllerHandler
+        }
+        set {
+            var ClosurePickerViewKey = "ClosurePickerViewKey"
+            objc_setAssociatedObject(self, &ClosurePickerViewKey, Box(newValue), objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
         }
     }
 }
